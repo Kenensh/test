@@ -3,481 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>專業美髮造型師 | 個人品牌</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Responsive Iframes Example</title>
     <style>
-        html {
-            scroll-behavior: smooth;
+        /* 基本設置 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
         }
-        .text-shadow {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+        .iframe-container {
+            margin: 10px 0;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-color: #000;
+            border-radius: 8px;
         }
-        .gallery-img {
-            transition: transform 0.3s ease;
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
-        .gallery-img:hover {
-            transform: scale(1.05);
+
+        /* 設定 10 個不同尺寸的 iframe */
+        .iframe-container.small {
+            max-width: 300px;
+            height: 170px;
+        }
+
+        .iframe-container.medium {
+            max-width: 480px;
+            height: 270px;
+        }
+
+        .iframe-container.large {
+            max-width: 640px;
+            height: 360px;
+        }
+
+        .iframe-container.xlarge {
+            max-width: 800px;
+            height: 450px;
+        }
+
+        .iframe-container.xxlarge {
+            max-width: 960px;
+            height: 540px;
+        }
+
+        .iframe-container.full {
+            max-width: 100%;
+            height: 100%;
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Header/Navigation -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <span class="text-3xl font-bold text-gray-800">HAIR<span class="text-pink-500">ARTISTRY</span></span>
-            </div>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#about" class="font-medium text-gray-600 hover:text-pink-500 transition duration-300">關於我</a>
-                <a href="#portfolio" class="font-medium text-gray-600 hover:text-pink-500 transition duration-300">作品實例</a>
-                <a href="#contact" class="font-medium text-gray-600 hover:text-pink-500 transition duration-300">聯絡我</a>
-            </nav>
-            <div class="md:hidden">
-                <button class="text-gray-500 hover:text-pink-500 focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-    </header>
+<body>
+    <h1>Responsive Iframes Example</h1>
 
-    <!-- Hero Section -->
-    <section class="relative h-screen bg-cover bg-center" style="background-image: url('/api/placeholder/1920/1080')">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 text-shadow">專業美髮造型設計</h1>
-            <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl text-shadow">打造屬於你的專屬風格，展現最完美的自我</p>
-            <a href="#portfolio" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-                查看作品集
-            </a>
-        </div>
-    </section>
+    <!-- 小尺寸 -->
+    <div class="iframe-container small">
+        <iframe src="https://www.youtube.com/embed/DaSQP2j3_ak?si=RhP6JyxOgxuI3tgv" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-10 md:mb-0">
-                    <img src="/api/placeholder/600/600" alt="Stylist Profile" class="rounded-full shadow-xl w-64 h-64 object-cover mx-auto">
-                </div>
-                <div class="md:w-2/3 md:pl-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">關於我</h2>
-                    <p class="text-lg text-gray-600 mb-6">
-                        您好，我是小美，擁有超過10年的專業美髮經驗。我的專長包括剪髮、染髮、燙髮以及各種創意造型設計。我相信每個人都應該擁有適合自己的獨特髮型，能夠展現個人特質與魅力。
-                    </p>
-                    <p class="text-lg text-gray-600 mb-6">
-                        我曾在國際髮型大賽中獲獎，也定期參與國際美髮研討會和工作坊，不斷學習最新的技術和趨勢。我的目標是讓每位客戶在離開沙龍時，都能感受到滿滿的自信與美麗。
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <div class="bg-gray-100 rounded-lg p-4 flex items-center">
-                            <i class="fas fa-cut text-pink-500 text-2xl mr-3"></i>
-                            <div>
-                                <h3 class="font-bold">精準剪髮</h3>
-                                <p class="text-sm text-gray-600">量身打造完美髮型</p>
-                            </div>
-                        </div>
-                        <div class="bg-gray-100 rounded-lg p-4 flex items-center">
-                            <i class="fas fa-palette text-pink-500 text-2xl mr-3"></i>
-                            <div>
-                                <h3 class="font-bold">時尚染髮</h3>
-                                <p class="text-sm text-gray-600">專業色彩搭配建議</p>
-                            </div>
-                        </div>
-                        <div class="bg-gray-100 rounded-lg p-4 flex items-center">
-                            <i class="fas fa-magic text-pink-500 text-2xl mr-3"></i>
-                            <div>
-                                <h3 class="font-bold">造型設計</h3>
-                                <p class="text-sm text-gray-600">特殊場合專業造型</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- 中等尺寸 -->
+    <div class="iframe-container medium">
+        <iframe src="https://www.youtube.com/embed/DaSQP2j3_ak?si=RhP6JyxOgxuI3tgv" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">作品實例</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    以下是我近期為客戶打造的精選髮型作品，每一款都根據客戶的臉型、風格偏好和生活方式量身定制
-                </p>
-            </div>
-            
-            <div class="flex mb-8 justify-center">
-                <div class="flex flex-wrap gap-4">
-                    <button class="px-4 py-2 rounded-full bg-pink-500 text-white font-medium">全部作品</button>
-                    <button class="px-4 py-2 rounded-full bg-white text-gray-700 hover:bg-gray-200 font-medium transition">短髮</button>
-                    <button class="px-4 py-2 rounded-full bg-white text-gray-700 hover:bg-gray-200 font-medium transition">中長髮</button>
-                    <button class="px-4 py-2 rounded-full bg-white text-gray-700 hover:bg-gray-200 font-medium transition">染髮</button>
-                    <button class="px-4 py-2 rounded-full bg-white text-gray-700 hover:bg-gray-200 font-medium transition">特殊造型</button>
-                </div>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 作品 1 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <div class="relative">
-                        <img src="/api/placeholder/600/400" alt="髮型作品1" class="w-full h-64 object-cover gallery-img">
-                        <div class="absolute bottom-0 left-0 bg-pink-500 text-white px-4 py-2">
-                            短髮設計
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">現代感鮑伯頭</h3>
-                        <p class="text-gray-600 mb-4">
-                            適合圓臉和方臉的客戶，增添時尚感並修飾臉型，簡單好整理。
-                        </p>
-                        <div class="flex justify-between">
-                            <span class="text-sm text-gray-500">完成時間: 45分鐘</span>
-                            <div class="flex">
-                                <i class="fas fa-heart text-pink-500 mr-1"></i>
-                                <span>128</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 作品 2 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <div class="relative">
-                        <img src="/api/placeholder/600/400" alt="髮型作品2" class="w-full h-64 object-cover gallery-img">
-                        <div class="absolute bottom-0 left-0 bg-pink-500 text-white px-4 py-2">
-                            染髮技術
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">漸層玫瑰金染髮</h3>
-                        <p class="text-gray-600 mb-4">
-                            從髮根到髮尾的精緻漸層，柔和的玫瑰金色調，打造高級感十足的造型。
-                        </p>
-                        <div class="flex justify-between">
-                            <span class="text-sm text-gray-500">完成時間: 3小時</span>
-                            <div class="flex">
-                                <i class="fas fa-heart text-pink-500 mr-1"></i>
-                                <span>156</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 作品 3 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <div class="relative">
-                        <img src="/api/placeholder/600/400" alt="髮型作品3" class="w-full h-64 object-cover gallery-img">
-                        <div class="absolute bottom-0 left-0 bg-pink-500 text-white px-4 py-2">
-                            中長髮設計
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">層次感及肩髮</h3>
-                        <p class="text-gray-600 mb-4">
-                            利用不同長度的層次，創造蓬鬆有型的效果，適合各種臉型的百搭髮型。
-                        </p>
-                        <div class="flex justify-between">
-                            <span class="text-sm text-gray-500">完成時間: 1小時</span>
-                            <div class="flex">
-                                <i class="fas fa-heart text-pink-500 mr-1"></i>
-                                <span>142</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 作品 4 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <div class="relative">
-                        <img src="/api/placeholder/600/400" alt="髮型作品4" class="w-full h-64 object-cover gallery-img">
-                        <div class="absolute bottom-0 left-0 bg-pink-500 text-white px-4 py-2">
-                            特殊造型
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">婚禮盤髮設計</h3>
-                        <p class="text-gray-600 mb-4">
-                            優雅精緻的婚禮髮型，結合現代與古典元素，配合新娘妝容打造完美儀式感。
-                        </p>
-                        <div class="flex justify-between">
-                            <span class="text-sm text-gray-500">完成時間: 2小時</span>
-                            <div class="flex">
-                                <i class="fas fa-heart text-pink-500 mr-1"></i>
-                                <span>189</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 作品 5 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <div class="relative">
-                        <img src="/api/placeholder/600/400" alt="髮型作品5" class="w-full h-64 object-cover gallery-img">
-                        <div class="absolute bottom-0 left-0 bg-pink-500 text-white px-4 py-2">
-                            染髮技術
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">藍紫色漸變挑染</h3>
-                        <p class="text-gray-600 mb-4">
-                            大膽前衛的色彩選擇，適合年輕客戶和追求個性的造型，充滿活力與創意。
-                        </p>
-                        <div class="flex justify-between">
-                            <span class="text-sm text-gray-500">完成時間: 4小時</span>
-                            <div class="flex">
-                                <i class="fas fa-heart text-pink-500 mr-1"></i>
-                                <span>167</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 作品 6 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <div class="relative">
-                        <img src="/api/placeholder/600/400" alt="髮型作品6" class="w-full h-64 object-cover gallery-img">
-                        <div class="absolute bottom-0 left-0 bg-pink-500 text-white px-4 py-2">
-                            短髮設計
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">法式短髮</h3>
-                        <p class="text-gray-600 mb-4">
-                            帶有法式慵懶感的短髮造型，輕盈自然，打造不費力的時尚感。
-                        </p>
-                        <div class="flex justify-between">
-                            <span class="text-sm text-gray-500">完成時間: 1小時</span>
-                            <div class="flex">
-                                <i class="fas fa-heart text-pink-500 mr-1"></i>
-                                <span>132</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <button class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-                    載入更多作品
-                </button>
-            </div>
-        </div>
-    </section>
+    <!-- 大尺寸 -->
+    <div class="iframe-container large">
+        <iframe src="https://www.youtube.com/embed/DaSQP2j3_ak?si=RhP6JyxOgxuI3tgv" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
 
-    <!-- Testimonials Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">客戶評價</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    聽聽我的客戶怎麼說
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-lg shadow">
-                    <div class="flex items-center mb-4">
-                        <img src="/api/placeholder/100/100" alt="客戶照片" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">張小姐</h4>
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic">
-                        "從來沒有一個髮型師能如此精準地理解我想要的風格，不僅如此，她還給了我專業的建議，讓我的髮型更適合我的臉型。非常感謝！"
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-lg shadow">
-                    <div class="flex items-center mb-4">
-                        <img src="/api/placeholder/100/100" alt="客戶照片" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">李先生</h4>
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic">
-                        "身為一個商務人士，我需要一個專業但又不失時尚感的髮型。她完美地拿捏了這個平衡點，讓我在會議中備受讚賞。"
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-lg shadow">
-                    <div class="flex items-center mb-4">
-                        <img src="/api/placeholder/100/100" alt="客戶照片" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">王小姐</h4>
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic">
-                        "我的婚禮髮型簡直完美！她不僅考慮到我的頭紗和禮服，還確保整天的活動中髮型都能保持最佳狀態。所有賓客都在誇我漂亮！"
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- 超大尺寸 -->
+    <div class="iframe-container xlarge">
+        <iframe src="https://www.youtube.com/embed/DaSQP2j3_ak?si=RhP6JyxOgxuI3tgv" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-900 text-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h2 class="text-3xl font-bold mb-6">聯絡我</h2>
-                    <p class="text-gray-300 mb-8">
-                        無論您有任何問題或想預約服務，都歡迎與我聯絡。我會盡快回覆您的訊息。
-                    </p>
-                    
-                    <div class="flex items-center mb-6">
-                        <div class="bg-pink-500 p-3 rounded-full mr-4">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold">地址</h4>
-                            <p class="text-gray-300">台北市信義區忠孝東路五段123號</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center mb-6">
-                        <div class="bg-pink-500 p-3 rounded-full mr-4">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold">電話</h4>
-                            <p class="text-gray-300">+886 2 1234 5678</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center mb-6">
-                        <div class="bg-pink-500 p-3 rounded-full mr-4">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold">電子郵件</h4>
-                            <p class="text-gray-300">contact@hairartistry.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex space-x-4 mt-8">
-                        <a href="#" class="bg-pink-500 hover:bg-pink-600 w-10 h-10 rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="bg-pink-500 hover:bg-pink-600 w-10 h-10 rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="bg-pink-500 hover:bg-pink-600 w-10 h-10 rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#" class="bg-pink-500 hover:bg-pink-600 w-10 h-10 rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-line"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <form class="bg-white p-8 rounded-lg">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">預約服務</h3>
-                        
-                        <div class="mb-4">
-                            <label class="block text-gray-700 font-medium mb-2" for="name">您的姓名</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-gray-700 font-medium mb-2" for="email">電子郵件</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-gray-700 font-medium mb-2" for="phone">電話號碼</label>
-                            <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-gray-700 font-medium mb-2" for="service">服務項目</label>
-                            <select id="service" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
-                                <option>請選擇服務項目</option>
-                                <option>剪髮造型</option>
-                                <option>染髮服務</option>
-                                <option>燙髮服務</option>
-                                <option>特殊造型設計</option>
-                                <option>頭皮護理</option>
-                            </select>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label class="block text-gray-700 font-medium mb-2" for="message">附加訊息</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
-                            提交預約
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- 更大尺寸 -->
+    <div class="iframe-container xxlarge">
+        <iframe src="https://www.youtube.com/embed/DaSQP2j3_ak?si=RhP6JyxOgxuI3tgv" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <span class="text-2xl font-bold">HAIR<span class="text-pink-500">ARTISTRY</span></span>
-                </div>
-                
-                <div class="mb-6 md:mb-0">
-                    <p>© 2025 HAIRARTISTRY. 版權所有。</p>
-                </div>
-                
-                <div class="flex space-x-4">
-                    <a href="#" class="hover:text-pink-500 transition">隱私政策</a>
-                    <a href="#" class="hover:text-pink-500 transition">服務條款</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- 100% 寬度的全屏 iframe -->
+    <div class="iframe-container full">
+        <iframe src="https://www.youtube.com/embed/DaSQP2j3_ak?si=RhP6JyxOgxuI3tgv" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
 
-    <!-- Scroll to top button -->
-    <a href="#" class="fixed bottom-6 right-6 bg-pink-500 hover:bg-pink-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-    
-    <!-- Simple JavaScript for smooth scrolling -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
